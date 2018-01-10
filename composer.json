@@ -1,0 +1,19 @@
+{
+    "name": "shweshi/opengraph",
+    "description": "A Laravel package to fetch website Open Graph metadata.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Shashi Prakash Gautam",
+            "email": "contactmespg@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "shweshi\\OpenGraph\\": "packages/shweshi/OpenGraph/src"
+        }
+    }
+}
