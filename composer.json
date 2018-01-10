@@ -9,10 +9,10 @@
         }
     ],
     "require": {},
-
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "shweshi\\OpenGraph\\": "packages/shweshi/OpenGraph/src"
+            "shweshi\\OpenGraph\\": "src/"
         }
     }
 }
