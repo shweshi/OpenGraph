@@ -4,20 +4,20 @@ namespace shweshi\OpenGraph;
 
 use DOMDocument;
 
-class OpenGraph {
-
-    public function fetch($url) {
+class OpenGraph
+{
+    public function fetch($url)
+    {
         $html = $this->curl_get_contents($url);
 
         /**
-         * parsing starts here:
+         * parsing starts here:.
          */
         $doc = new DOMDocument();
         @$doc->loadHTML($html);
 
-
         $tags = $doc->getElementsByTagName('meta');
-        $metadata = array();
+        $metadata = [];
 
         foreach ($tags as $tag) {
             if ($tag->hasAttribute('property') && strpos($tag->getAttribute('property'), 'og:') === 0) {
@@ -32,7 +32,8 @@ class OpenGraph {
         return $metadata;
     }
 
-    protected function curl_get_contents($url) {
+    protected function curl_get_contents($url)
+    {
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_FAILONERROR, 1);
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
@@ -43,7 +44,7 @@ class OpenGraph {
         curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
         $response = curl_exec($curl);
         curl_close($curl);
+
         return $response;
     }
-
 }
