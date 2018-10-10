@@ -1,6 +1,10 @@
 # OpenGraph
 A Laravel package to fetch Open Graph metadata of a website.
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
+[![StyleCI](https://styleci.io/repos/116995669/shield?branch=master)](https://styleci.io/repos/116995669)
+[![Total Downloads](https://img.shields.io/packagist/dt/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
+
 ## Installation
 Perform the following operations in order to use this package
 - Run `composer require "shweshi/opengraph"` in your terminal
