@@ -1,4 +1,4 @@
-# Laravel-Open-Graph
+# Open-Graph
 A Laravel package to fetch Open Graph metadata of a website.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
