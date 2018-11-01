@@ -1,10 +1,11 @@
 # OpenGraph
 A Laravel package to fetch Open Graph metadata of a website.
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9d7d37a655154a0ea5d9aea4dac6519f)](https://app.codacy.com/app/shweshi/OpenGraph?utm_source=github.com&utm_medium=referral&utm_content=shweshi/OpenGraph&utm_campaign=Badge_Grade_Dashboard)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
-[![StyleCI](https://styleci.io/repos/116995669/shield?branch=master)](https://styleci.io/repos/116995669)
 [![Total Downloads](https://img.shields.io/packagist/dt/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9d7d37a655154a0ea5d9aea4dac6519f)](https://app.codacy.com/app/shweshi/OpenGraph?utm_source=github.com&utm_medium=referral&utm_content=shweshi/OpenGraph&utm_campaign=Badge_Grade_Dashboard)
+[![StyleCI](https://styleci.io/repos/116995669/shield?branch=master)](https://styleci.io/repos/116995669)
+[![Build Status](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/build.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/build-status/master)
 
 ## Installation
 Perform the following operations in order to use this package
