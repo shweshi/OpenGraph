@@ -3,6 +3,7 @@ A Laravel package to fetch Open Graph metadata of a website.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
 [![Total Downloads](https://img.shields.io/packagist/dt/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/?branch=master)
 [![StyleCI](https://styleci.io/repos/116995669/shield?branch=master)](https://styleci.io/repos/116995669)
 [![Build Status](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/build.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/build-status/master)
 
