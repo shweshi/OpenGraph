@@ -1,18 +1,39 @@
 {
-    "name": "shweshi/opengraph",
-    "description": "A Laravel package to fetch website Open Graph metadata.",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Shashi Prakash Gautam",
-            "email": "contactmespg@gmail.com"
-        }
-    ],
-    "require": {},
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "shweshi\\OpenGraph\\": "src/"
-        }
+  "name": "shweshi/opengraph",
+  "description": "A Laravel package to fetch website Open Graph metadata.",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Shashi Prakash Gautam",
+      "email": "contactmespg@gmail.com"
     }
+  ],
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "shweshi\\OpenGraph\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "shweshi\\OpenGraph\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "shweshi\\OpenGraph\\Providers\\OpenGraphProvider"
+      ],
+      "aliases": {
+        "OpenGraph": "shweshi\\OpenGraph\\Facades\\OpenGraphFacade"
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-# OpenGraph
+# Laravel OpenGraph
 A Laravel package to fetch Open Graph metadata of a website.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
@@ -9,8 +9,14 @@ A Laravel package to fetch Open Graph metadata of a website.
 
 ## Installation
 Perform the following operations in order to use this package
-- Run `composer require "shweshi/opengraph"` in your terminal
-- **Add Service Provider** 
+- Install via composer
+```
+composer require "shweshi/opengraph"
+```
+
+If you do not run Laravel 5.5 (or higher), then add the service provider in config/app.php:
+
+- **Add Service Provider**
    Open `config/app.php` and add `shweshi\OpenGraph\Providers\OpenGraphProvider::class,` to the end of `providers` array:
 
     ```
@@ -27,15 +33,34 @@ Perform the following operations in order to use this package
         'OpenGraph' => shweshi\OpenGraph\Facades\OpenGraphFacade::class
     ),
     ```
+
+If you do run the package on Laravel 5.5+, package auto-discovery takes care of the magic of adding the service provider.
+
 ## Requirements
 - You need to install the [DOM](http://www.php.net/en/dom) extension.
 
 ## How to use
 
-- After following the above steps, 
+- After following the above steps,
 
     ```
+    use OpenGraph;
+
     $data = OpenGraph::fetch("https://unsplash.com/");
 
-    print_r($data);
     ```
+
+  this will give you an array like this..
+
+    ```
+      array (
+        'title' => 'Beautiful Free Images & Pictures | Unsplash',
+        'description' => 'Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.',
+        'type' => 'website',
+        'url' => 'https://unsplash.com/',
+        'image' => 'http://images.unsplash.com/photo-1542841791-1925b02a2bbb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=aceabe8a2fd1a273da24e68c21768de0',
+        'image:secure_url' => 'https://images.unsplash.com/photo-1542841791-1925b02a2bbb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=aceabe8a2fd1a273da24e68c21768de0',
+      )
+    ```    
+
+### Happy coding!    
