@@ -30,7 +30,10 @@
     "laravel": {
       "providers": [
         "shweshi\\OpenGraph\\Providers\\OpenGraphProvider"
-      ]
+      ],
+      "aliases": {
+        "OpenGraph": "shweshi\\OpenGraph\\Facades\\OpenGraphFacade"
+      }
     }
   }
 }
