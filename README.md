@@ -63,4 +63,19 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
       )
     ```    
 
+## Testing
+
+    ```
+    composer test
+
+    ```
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.\
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
 ### Happy coding!    
