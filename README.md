@@ -8,6 +8,7 @@ A Laravel package to fetch Open Graph metadata of a website.
 [![Build Status](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/build.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/build-status/master)
 
 ## Installation
+
 Perform the following operations in order to use this package
 - Install via composer
 ```
@@ -37,6 +38,7 @@ If you do not run Laravel 5.5 (or higher), then add the service provider in conf
 If you do run the package on Laravel 5.5+, package auto-discovery takes care of the magic of adding the service provider.
 
 ## Requirements
+
 - You need to install the [DOM](http://www.php.net/en/dom) extension.
 
 ## How to use
@@ -62,5 +64,17 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
         'image:secure_url' => 'https://images.unsplash.com/photo-1542841791-1925b02a2bbb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=aceabe8a2fd1a273da24e68c21768de0',
       )
     ```    
+
+## Testing
+
+    composer test
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.\
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 ### Happy coding!    
