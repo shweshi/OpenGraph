@@ -12,8 +12,8 @@ class OpenGraphTest extends TestCase
     {
         $o = new OpenGraph();
         $data = $o->fetch(
-         'https://www.unsplash.com/'
-       );
+            'https://www.unsplash.com/'
+        );
         $this->assertArrayHasKey('title', $data);
         $this->assertArrayHasKey('description', $data);
         $this->assertArrayHasKey('type', $data);
@@ -27,7 +27,7 @@ class OpenGraphTest extends TestCase
         $o = new OpenGraph();
         $data = $o->fetch(
         'https://www.example.com/'
-      );
+        );
 
         $this->assertEmpty($data);
     }
