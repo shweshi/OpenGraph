@@ -10,8 +10,8 @@ class OpenGraphTest extends TestCase
     /** @test */
     public function testFetch()
     {
-        $o = new OpenGraph();
-        $data = $o->fetch(
+        $opengraph = new OpenGraph();
+        $data = $opengraph->fetch(
             'https://www.unsplash.com/'
         );
         $this->assertArrayHasKey('title', $data);
@@ -24,8 +24,8 @@ class OpenGraphTest extends TestCase
     /** @test */
     public function testFetchReturnsEmptyArrayForWebsiteWithNoMetadata()
     {
-        $o = new OpenGraph();
-        $data = $o->fetch(
+        $opengraph = new OpenGraph();
+        $data = $opengraph->fetch(
         'https://www.example.com/'
         );
 
