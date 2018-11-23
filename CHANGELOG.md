@@ -9,5 +9,4 @@ All notable changes to `OpenGraph` will be documented in this file
 - Fix autoload
 
 ## 1.0.0 - 2018-01-17
-
 - initial release
