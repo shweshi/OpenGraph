@@ -14,7 +14,7 @@ class OpenGraph
          * parsing starts here:.
          */
         $doc = new DOMDocument();
-        @$doc->loadHTML($html);
+        @$doc->loadHTML('<?xml encoding="utf-8" ?>' .$html);
 
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
@@ -41,6 +41,7 @@ class OpenGraph
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+        curl_setopt($curl, CURLOPT_ENCODING, 'UTF-8');
         $response = curl_exec($curl);
         curl_close($curl);
 
