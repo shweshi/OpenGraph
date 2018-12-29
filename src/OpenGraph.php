@@ -14,7 +14,7 @@ class OpenGraph
          * parsing starts here:.
          */
         $doc = new DOMDocument();
-        @$doc->loadHTML('<?xml encoding="utf-8" ?>' .$html);
+        @$doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
 
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
