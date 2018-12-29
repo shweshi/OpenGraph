@@ -7,6 +7,7 @@ A Laravel package to fetch Open Graph metadata of a website.
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/?branch=master)
 [![StyleCI](https://styleci.io/repos/116995669/shield?branch=master)](https://styleci.io/repos/116995669)
 [![Build Status](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/build.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/build-status/master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph?ref=badge_shield)
 
 ## Installation
 
@@ -80,5 +81,8 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph?ref=badge_large)
 
 ### Happy coding!
