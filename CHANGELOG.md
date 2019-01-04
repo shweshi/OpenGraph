@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file
 
+## 1.0.3 - 2019-01-04
+- Added support to fetch all metadata
+
 ## 1.0.2 - 2018-11-23
 - Added tests and autoload for laravel >= 5.5
 
