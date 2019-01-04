@@ -54,9 +54,9 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   use OpenGraph;
 
   $data = OpenGraph::fetch("https://unsplash.com/");
-  
+  ```
   You can also pass an optional parameter either true or false. Which specify whether to fetch all metadata or only og metadata. By default its false.
-  
+  ```
   $data = OpenGraph::fetch("https://unsplash.com/", true);
 
   ```
