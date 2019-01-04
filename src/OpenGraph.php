@@ -32,6 +32,7 @@ class OpenGraph
                 $metadata[$key] = $value;
             }
         }
+
         return $metadata;
     }
 
