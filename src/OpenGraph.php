@@ -6,7 +6,7 @@ use DOMDocument;
 
 class OpenGraph
 {
-    public function fetch($url)
+    public function fetch($url, $allMeta = null)
     {
         $html = $this->curl_get_contents($url);
 
@@ -18,17 +18,20 @@ class OpenGraph
 
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
-
         foreach ($tags as $tag) {
-            if ($tag->hasAttribute('property') && strpos($tag->getAttribute('property'), 'og:') === 0) {
-                $key = strtr(substr($tag->getAttribute('property'), 3), '-', '_');
+            $metaproperty = ($tag->hasAttribute('property')) ? $tag->getAttribute('property') : $tag->getAttribute('name');
+            if (!$allMeta && $metaproperty && strpos($tag->getAttribute('property'), 'og:') === 0) {
+                $key = strtr(substr($metaproperty, 3), '-', '_');
+                $value = $tag->getAttribute('content');
+            }
+            if ($allMeta && $metaproperty) {
+                $key = (strpos($metaproperty, 'og:') === 0) ? strtr(substr($metaproperty, 3), '-', '_') : $metaproperty;
                 $value = $tag->getAttribute('content');
             }
             if (!empty($key)) {
                 $metadata[$key] = $value;
             }
         }
-
         return $metadata;
     }
 
