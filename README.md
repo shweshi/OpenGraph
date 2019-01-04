@@ -55,10 +55,10 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
 
   $data = OpenGraph::fetch("https://unsplash.com/");
   ```
-  You can also pass an optional parameter either true or false. Which specify whether to fetch all metadata or only og metadata. By default its false.
+  You can also pass an optional parameter either true or false. When set false it will only fetch basic metadata and in case of true it will fetch all the other optional metadata as well like audio, video, music and twitter metatags as well.
+  
   ```
   $data = OpenGraph::fetch("https://unsplash.com/", true);
-
   ```
 
   this will give you an array like this if by default..
@@ -78,29 +78,29 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   
   ```
     array (
-    'charset' => 'UTF8',
-    'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui',
-    'mobile-web-app-capable' => 'yes',
-    'apple-mobile-web-app-capable' => 'yes',
-    'apple-mobile-web-app-title' => 'Unsplash',
-    'application-name' => 'Unsplash',
-    'author' => 'Unsplash',
-    'msapplication-config' => 'browserconfig.xml',
-    'msapplication-TileColor' => '#ffffff',
-    'msapplication-TileImage' => 'https://unsplash.com/mstile-144x144.png',
-    'theme-color' => '#ffffff',
-    'description' => 'Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.',
-    'twitter:site' => '@unsplash',
-    'twitter:title' => 'Beautiful Free Images & Pictures | Unsplash',
-    'twitter:description' => 'Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.',
-    'twitter:url' => 'https://unsplash.com/',
-    'twitter:card' => 'summary_large_image',
-    'twitter:image' => 'https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
-    'title' => 'Beautiful Free Images & Pictures | Unsplash',
-    'type' => 'website',
-    'url' => 'https://unsplash.com/',
-    'image' => 'http://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
-    'image:secure_url' => 'https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
+      'charset' => 'UTF8',
+      'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui',
+      'mobile-web-app-capable' => 'yes',
+      'apple-mobile-web-app-capable' => 'yes',
+      'apple-mobile-web-app-title' => 'Unsplash',
+      'application-name' => 'Unsplash',
+      'author' => 'Unsplash',
+      'msapplication-config' => 'browserconfig.xml',
+      'msapplication-TileColor' => '#ffffff',
+      'msapplication-TileImage' => 'https://unsplash.com/mstile-144x144.png',
+      'theme-color' => '#ffffff',
+      'description' => 'Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.',
+      'twitter:site' => '@unsplash',
+      'twitter:title' => 'Beautiful Free Images & Pictures | Unsplash',
+      'twitter:description' => 'Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.',
+      'twitter:url' => 'https://unsplash.com/',
+      'twitter:card' => 'summary_large_image',
+      'twitter:image' => 'https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
+      'title' => 'Beautiful Free Images & Pictures | Unsplash',
+      'type' => 'website',
+      'url' => 'https://unsplash.com/',
+      'image' => 'http://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
+      'image:secure_url' => 'https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
   )
   ```
 
