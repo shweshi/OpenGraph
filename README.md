@@ -54,10 +54,14 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   use OpenGraph;
 
   $data = OpenGraph::fetch("https://unsplash.com/");
+  
+  You can also pass an optional parameter either true or false. Which specify whether to fetch all metadata or only og metadata. By default its false.
+  
+  $data = OpenGraph::fetch("https://unsplash.com/", true);
 
   ```
 
-  this will give you an array like this..
+  this will give you an array like this if by default..
 
   ```
     array (
@@ -68,6 +72,36 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
       'image' => 'http://images.unsplash.com/photo-1542841791-1925b02a2bbb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=aceabe8a2fd1a273da24e68c21768de0',
       'image:secure_url' => 'https://images.unsplash.com/photo-1542841791-1925b02a2bbb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=aceabe8a2fd1a273da24e68c21768de0',
     )
+  ```
+  
+  or with parameter set to true the response will be..
+  
+  ```
+    array (
+    'charset' => 'UTF8',
+    'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui',
+    'mobile-web-app-capable' => 'yes',
+    'apple-mobile-web-app-capable' => 'yes',
+    'apple-mobile-web-app-title' => 'Unsplash',
+    'application-name' => 'Unsplash',
+    'author' => 'Unsplash',
+    'msapplication-config' => 'browserconfig.xml',
+    'msapplication-TileColor' => '#ffffff',
+    'msapplication-TileImage' => 'https://unsplash.com/mstile-144x144.png',
+    'theme-color' => '#ffffff',
+    'description' => 'Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.',
+    'twitter:site' => '@unsplash',
+    'twitter:title' => 'Beautiful Free Images & Pictures | Unsplash',
+    'twitter:description' => 'Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.',
+    'twitter:url' => 'https://unsplash.com/',
+    'twitter:card' => 'summary_large_image',
+    'twitter:image' => 'https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
+    'title' => 'Beautiful Free Images & Pictures | Unsplash',
+    'type' => 'website',
+    'url' => 'https://unsplash.com/',
+    'image' => 'http://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
+    'image:secure_url' => 'https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
+  )
   ```
 
 ## Testing
