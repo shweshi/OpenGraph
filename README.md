@@ -55,13 +55,7 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
 
   $data = OpenGraph::fetch("https://unsplash.com/");
   ```
-  You can also pass an optional parameter either true or false. When set false it will only fetch basic metadata and in case of true it will fetch all the other optional metadata as well like audio, video, music and twitter metatags as well.
-  
-  ```
-  $data = OpenGraph::fetch("https://unsplash.com/", true);
-  ```
-
-  this will give you an array like this if by default..
+  this will give you an array like this..
 
   ```
     array (
@@ -74,7 +68,13 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
     )
   ```
   
-  or with parameter set to true the response will be..
+  You can also pass an optional parameter either true or false along with url. When set false it will only fetch basic metadata and in case of true it will fetch all the other optional metadata as well like audio, video, music and twitter metatags as well.
+  
+  ```
+  $data = OpenGraph::fetch("https://unsplash.com/", true);
+  ```
+  
+  this will give you an array like this..
   
   ```
     array (
