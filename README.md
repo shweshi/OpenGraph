@@ -1,15 +1,52 @@
-# Laravel OpenGraph
+<p align="center">
+  <a href="https://shweshi.github.io/OpenGraph/">
+    <img alt="Laravel OpenGraph" src="https://user-images.githubusercontent.com/35127382/56821996-695df500-686d-11e9-9c59-c70d0c78c80e.png" />
+  </a>
+</p>
 
-A Laravel package to fetch Open Graph metadata of a website.
+<p align="center">
+  <strong>A Laravel package to fetch Open Graph metadata of a website.</strong>
+</p>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
-[![Total Downloads](https://img.shields.io/packagist/dt/shweshi/OpenGraph.svg?style=flat-square)](https://packagist.org/packages/shweshi/OpenGraph)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/?branch=master)
-[![StyleCI](https://styleci.io/repos/116995669/shield?branch=master)](https://styleci.io/repos/116995669)
-[![Build Status](https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/build.png?b=master)](https://scrutinizer-ci.com/g/shweshi/OpenGraph/build-status/master)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph?ref=badge_shield)
+<p align="center">
+  <a href="https://packagist.org/packages/shweshi/OpenGraph">
+    <img src="https://img.shields.io/packagist/v/shweshi/OpenGraph.svg?style=flat-square" alt="Latest Version on Packagist">
+  </a>
 
-## Installation
+  <a href="https://packagist.org/packages/shweshi/OpenGraph">
+    <img src="https://img.shields.io/packagist/dt/shweshi/OpenGraph.svg?style=flat-square" alt="Total Downloads">
+  </a>
+
+   <a href="https://scrutinizer-ci.com/g/shweshi/OpenGraph/?branch=master">
+      <img src="https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality">
+  </a>
+
+  <a href="https://styleci.io/repos/116995669">
+      <img src="https://styleci.io/repos/116995669/shield?branch=master" alt="StyleCI">
+  </a>
+
+  <a href="https://scrutinizer-ci.com/g/shweshi/OpenGraph/build-status/master">
+    <img src="https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/build.png?b=master" alt="Build Status">
+  </a>
+
+  <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph?ref=badge_shield">
+    <img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph.svg?type=shield" alt="FOSSA Status">
+  </a>
+</p>
+
+## Features
+
+- **Easily fetch metadata of a url.** Laravel OpenGraph fetch all the metadata of a URL.
+
+- **Supports twitter metadata.** Laravel OpenGraph supports twitter OG data too.
+
+- **Verify image URL.** Laravel OpenGraph verifies that the image url in the image metadata is valid or not.
+
+## How to use Laravel OpenGraph
+
+Article can be found on medium blog: https://hackernoon.com/how-to-fetch-open-graph-metadata-in-laravel-2d5d674904d7
+
+### Installation
 
 Perform the following operations in order to use this package
 
@@ -42,11 +79,11 @@ If you do not run Laravel 5.5 (or higher), then add the service provider in conf
 
 If you do run the package on Laravel 5.5+, package auto-discovery takes care of the magic of adding the service provider.
 
-## Requirements
+### Requirements
 
 - You need to install the [DOM](http://www.php.net/en/dom) extension.
 
-## How to use
+### How to use
 
 - After following the above steps,
 
@@ -105,23 +142,19 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   )
   ```
 
-## Features
-
-- Verifies the image metatag contains the valid image url.
-
-## Testing
+### Testing
 
     composer test
 
-## Changelog
+### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Contributing
+### Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE OF CONDUCT](CODE_OF_CONDUCT.md) for details.
 
-## License
+### License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
