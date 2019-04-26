@@ -55,6 +55,7 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
 
   $data = OpenGraph::fetch("https://unsplash.com/");
   ```
+
   this will give you an array like this..
 
   ```
@@ -67,15 +68,15 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
       'image:secure_url' => 'https://images.unsplash.com/photo-1542841791-1925b02a2bbb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=aceabe8a2fd1a273da24e68c21768de0',
     )
   ```
-  
+
   You can also pass an optional parameter either true or false along with url. When set false it will only fetch basic metadata and in case of true it will fetch all the other optional metadata as well like audio, video, music and twitter metatags as well.
-  
+
   ```
   $data = OpenGraph::fetch("https://unsplash.com/", true);
   ```
-  
+
   this will give you an array like this..
-  
+
   ```
     array (
       'charset' => 'UTF8',
@@ -104,6 +105,10 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   )
   ```
 
+## Features
+
+- Verifies the image metatag contains the valid image url.
+
 ## Testing
 
     composer test
@@ -119,7 +124,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE OF CONDUCT](CODE_OF_CONDUCT
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph?ref=badge_large)
 
