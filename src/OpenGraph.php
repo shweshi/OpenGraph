@@ -31,16 +31,17 @@ class OpenGraph
             if (!empty($key)) {
                 $metadata[$key] = $value;
             }
-            /**
+            /*
              * Verify image url
              */
             if (isset($metadata['image'])) {
                 $isValidImageUrl = $this->verify_image_url($metadata['image']);
                 if (!$isValidImageUrl) {
-                  $metadata['image'] = "";
+                    $metadata['image'] = '';
                 }
             }
         }
+
         return $metadata;
     }
 
@@ -63,6 +64,7 @@ class OpenGraph
     protected function verify_image_url($url)
     {
         $headers = get_headers($url);
-        return stripos($headers[0], "200 OK") ? true : false;
+
+        return stripos($headers[0], '200 OK') ? true : false;
     }
 }
