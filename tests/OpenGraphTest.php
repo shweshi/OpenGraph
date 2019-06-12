@@ -35,7 +35,7 @@ class OpenGraphTest extends TestCase
         $this->assertArrayHasKey('image', $data);
         $this->assertArrayHasKey('fb:app_id', $data);
     }
-    
+
     /** @test */
     public function testFetchReturnsEmptyArrayForWebsiteWithNoMetadata()
     {
