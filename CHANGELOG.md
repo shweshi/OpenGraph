@@ -1,6 +1,10 @@
 # Changelog
 
-All notable changes to `OpenGraph` will be documented in this file
+All notable changes to `OpenGraph` will be documented in this file.
+
+## 1.0.5 - 2019-06-13
+
+- Added support to fetch language specific metadata.
 
 ## 1.0.4 - 2019-04-26
 
