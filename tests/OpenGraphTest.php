@@ -12,13 +12,28 @@ class OpenGraphTest extends TestCase
     {
         $opengraph = new OpenGraph();
         $data = $opengraph->fetch(
-            'https://www.unsplash.com/'
+            'https://www.ogp.me/'
         );
         $this->assertArrayHasKey('title', $data);
         $this->assertArrayHasKey('description', $data);
         $this->assertArrayHasKey('type', $data);
         $this->assertArrayHasKey('url', $data);
         $this->assertArrayHasKey('image', $data);
+    }
+
+    /** @test */
+    public function testFetchAllMetadata()
+    {
+        $opengraph = new OpenGraph();
+        $data = $opengraph->fetch(
+            'https://www.ogp.me/', true
+        );
+        $this->assertArrayHasKey('title', $data);
+        $this->assertArrayHasKey('description', $data);
+        $this->assertArrayHasKey('type', $data);
+        $this->assertArrayHasKey('url', $data);
+        $this->assertArrayHasKey('image', $data);
+        $this->assertArrayHasKey('fb:app_id', $data);
     }
 
     /** @test */

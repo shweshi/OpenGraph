@@ -38,9 +38,17 @@
 
 - **Easily fetch metadata of a url.** Laravel OpenGraph fetch all the metadata of a URL.
 
+- **Supports language specific metadata.** Laravel OpenGraph can fetch metadata in a specific language if webpage supports.
+
 - **Supports twitter metadata.** Laravel OpenGraph supports twitter OG data too.
 
 - **Verify image URL.** Laravel OpenGraph verifies that the image url in the image metadata is valid or not.
+
+## Demo
+
+```
+  curl https://laravelopengraph.herokuapp.com/api/fetch?url=ogp.me&allMeta=true&language=en_GB
+```
 
 ## How to use Laravel OpenGraph
 
@@ -140,6 +148,15 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
       'image' => 'http://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
       'image:secure_url' => 'https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9',
   )
+  ```
+
+  To fetch the metadata in a specific language you can pass the language as the third argument, this value will be used as the Accept-Language header.
+
+  ```
+  $url = "https://ogp.me",
+  $allMeta = true, // can be false
+  $language = 'en' // en-US,en;q=0.8,en-GB;q=0.6,es;q=0.4
+  $data = OpenGraph::fetch($url, $allMeta, $language);
   ```
 
 ### Testing
