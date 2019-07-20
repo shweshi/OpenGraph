@@ -46,4 +46,17 @@ class OpenGraphTest extends TestCase
 
         $this->assertEmpty($data);
     }
+
+    /** @test */
+    public function testFetchMustacheMetasData()
+    {
+        $opengraph = new OpenGraph();
+        $data = $opengraph->fetch(
+            'https://raw.githubusercontent.com/jurgenbosch/OpenGraph/master/tests/__mocks__/angular-headers.html', true
+        );
+        $this->assertArrayHasKey('title', $data);
+        $this->assertArrayHasKey('description', $data);
+        $this->assertArrayHasKey('image', $data);
+        $this->assertEmpty($data['image']);
+    }
 }
