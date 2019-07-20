@@ -81,6 +81,10 @@ class OpenGraph
 
     protected function verify_image_url($url)
     {
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            return false;
+        }
+
         $headers = get_headers($url);
 
         return stripos($headers[0], '200 OK') ? true : false;
