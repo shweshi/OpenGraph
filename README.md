@@ -36,13 +36,13 @@
 
 ## Features
 
-- **Easily fetch metadata of a url.** Laravel OpenGraph fetch all the metadata of a URL.
+- **Easily fetch metadata of a URL.** Laravel OpenGraph fetches all the metadata of a URL.
 
-- **Supports language specific metadata.** Laravel OpenGraph can fetch metadata in a specific language if webpage supports.
+- **Supports language-specific metadata.** Laravel OpenGraph can fetch metadata in a specific language if webpage supports.
 
 - **Supports twitter metadata.** Laravel OpenGraph supports twitter OG data too.
 
-- **Verify image URL.** Laravel OpenGraph verifies that the image url in the image metadata is valid or not.
+- **Verify image URL.** Laravel OpenGraph verifies that the image URL in the image metadata is valid or not.
 
 ## Demo
 
@@ -52,7 +52,7 @@
 
 ## How to use Laravel OpenGraph
 
-Article can be found on medium blog: https://hackernoon.com/how-to-fetch-open-graph-metadata-in-laravel-2d5d674904d7
+An article can be found on the medium blog: https://hackernoon.com/how-to-fetch-open-graph-metadata-in-laravel-2d5d674904d7
 
 ### Installation
 
@@ -101,7 +101,7 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   $data = OpenGraph::fetch("https://unsplash.com/");
   ```
 
-  this will give you an array like this..
+  this will give you an array like this...
 
   ```
     array (
@@ -114,13 +114,13 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
     )
   ```
 
-  You can also pass an optional parameter either true or false along with url. When set false it will only fetch basic metadata and in case of true it will fetch all the other optional metadata as well like audio, video, music and twitter metatags as well.
+  You can also pass an optional parameter either true or false along with URL. When set false it will only fetch basic metadata and in case of true it will fetch all the other optional metadata as well like audio, video, music and twitter metatags as well.
 
   ```
   $data = OpenGraph::fetch("https://unsplash.com/", true);
   ```
 
-  this will give you an array like this..
+  this will give you an array like this...
 
   ```
     array (
