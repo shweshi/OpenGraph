@@ -23,7 +23,7 @@ class OpenGraphProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('OpenGraph', function() {
+        $this->app->bind('OpenGraph', function () {
             return new \shweshi\OpenGraph\OpenGraph();
         });
     }
