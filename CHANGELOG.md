@@ -2,6 +2,14 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.0.7 - 2019-12-13
+
+- Fix non-ascii image url meta data.
+
+## 1.0.6 - 2019-07-20
+
+- Handling invalid image URL.
+
 ## 1.0.5 - 2019-06-13
 
 - Added support to fetch language specific metadata.
