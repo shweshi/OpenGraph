@@ -59,8 +59,8 @@ class OpenGraphTest extends TestCase
         $this->assertArrayHasKey('image', $data);
         $this->assertEmpty($data['image']);
     }
-    
-        /** @test */
+
+    /** @test */
     public function testFetchNonAsciiImageUrlData()
     {
         $opengraph = new OpenGraph();
