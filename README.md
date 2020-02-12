@@ -25,6 +25,10 @@
       <img src="https://styleci.io/repos/116995669/shield?branch=master" alt="StyleCI">
   </a>
 
+  <a href="https://www.codefactor.io/repository/github/shweshi/opengraph">
+    <img src="https://www.codefactor.io/repository/github/shweshi/opengraph/badge" alt="CodeFactor" />
+  </a>
+
   <a href="https://scrutinizer-ci.com/g/shweshi/OpenGraph/build-status/master">
     <img src="https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/build.png?b=master" alt="Build Status">
   </a>
