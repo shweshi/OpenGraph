@@ -88,8 +88,12 @@ class OpenGraph
             return false;
         }
 
-        $headers = get_headers($url);
+        try {
+            $headers = get_headers($url);
 
-        return stripos($headers[0], '200 OK') ? true : false;
+            return stripos($headers[0], '200 OK') ? true : false;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 }
