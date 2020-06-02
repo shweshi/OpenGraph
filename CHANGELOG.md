@@ -2,6 +2,10 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.0.8 - 2020-06-03
+
+- Fix error when verifying image url
+
 ## 1.0.7 - 2019-12-13
 
 - Fix non-ascii image url meta data.
