@@ -17,7 +17,9 @@
     <img src="https://img.shields.io/packagist/dt/shweshi/OpenGraph.svg?style=flat-square" alt="Total Downloads">
   </a>
 
-   <a href="https://scrutinizer-ci.com/g/shweshi/OpenGraph/?branch=master">
+  <a title="MadeWithLaravel.com Shield" href="https://madewithlaravel.com/p/laravel-opengraph/shield-link"> <img src="https://madewithlaravel.com/storage/repo-shields/1795-shield.svg"/></a>
+
+  <a href="https://scrutinizer-ci.com/g/shweshi/OpenGraph/?branch=master">
       <img src="https://scrutinizer-ci.com/g/shweshi/OpenGraph/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality">
   </a>
 
