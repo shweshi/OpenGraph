@@ -26,7 +26,8 @@ class OpenGraphTest extends TestCase
     {
         $opengraph = new OpenGraph();
         $data = $opengraph->fetch(
-            'https://www.ogp.me/', true
+            'https://www.ogp.me/',
+            true
         );
         $this->assertArrayHasKey('title', $data);
         $this->assertArrayHasKey('description', $data);
@@ -41,7 +42,7 @@ class OpenGraphTest extends TestCase
     {
         $opengraph = new OpenGraph();
         $data = $opengraph->fetch(
-        'https://www.example.com/'
+            'https://www.example.com/'
         );
 
         $this->assertEmpty($data);
@@ -52,7 +53,8 @@ class OpenGraphTest extends TestCase
     {
         $opengraph = new OpenGraph();
         $data = $opengraph->fetch(
-            'https://raw.githubusercontent.com/jurgenbosch/OpenGraph/master/tests/__mocks__/angular-headers.html', true
+            'https://raw.githubusercontent.com/jurgenbosch/OpenGraph/master/tests/__mocks__/angular-headers.html',
+            true
         );
         $this->assertArrayHasKey('title', $data);
         $this->assertArrayHasKey('description', $data);
@@ -65,7 +67,8 @@ class OpenGraphTest extends TestCase
     {
         $opengraph = new OpenGraph();
         $data = $opengraph->fetch(
-            'https://unitedwithisrael.org/iranians-fall-in-love-with-israel-as-netanyahu-reaches-out-in-persian/', true
+            'https://unitedwithisrael.org/iranians-fall-in-love-with-israel-as-netanyahu-reaches-out-in-persian/',
+            true
         );
         $this->assertArrayHasKey('title', $data);
         $this->assertArrayHasKey('description', $data);
