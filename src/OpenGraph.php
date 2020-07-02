@@ -75,11 +75,11 @@ class OpenGraph
         ]);
 
         $response = curl_exec($curl);
-        if (curl_errno($curl) !== 0) {
-            throw new FetchException(curl_error($curl), curl_errno($curl), null, curl_getinfo($curl));
+        if (curl_errno(/** @scrutinizer ignore-type */ $curl) !== 0) {
+            throw new FetchException(curl_error(/** @scrutinizer ignore-type */ $curl), curl_errno($curl), null, curl_getinfo(/** @scrutinizer ignore-type */ $curl));
         }
 
-        curl_close($curl);
+        curl_close(/** @scrutinizer ignore-type */ $curl);
 
         return $response;
     }
