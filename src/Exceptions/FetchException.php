@@ -5,7 +5,7 @@ namespace shweshi\OpenGraph\Exceptions;
 class FetchException extends \Exception
 {
     public function __construct(
-        $message = "",
+        $message = '',
         $code = 0,
         Throwable $previous = null,
         $data = []
