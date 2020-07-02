@@ -162,6 +162,19 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   $language = 'en' // en-US,en;q=0.8,en-GB;q=0.6,es;q=0.4
   $data = OpenGraph::fetch($url, $allMeta, $language);
   ```
+  
+### Exception Handling
+
+The fetch() method, returns a FetchException with aditional data at failure.
+
+  ```
+      try {
+          $data = OpenGraph::fetch($url, true);
+      } catch (shweshi\OpenGraph\Exceptions\FetchException $e) {
+          $message = $e->getMessage();
+          $data = $e->getData();
+      }
+  ```
 
 ### Testing
 
