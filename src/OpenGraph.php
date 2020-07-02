@@ -3,6 +3,7 @@
 namespace shweshi\OpenGraph;
 
 use DOMDocument;
+use shweshi\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
 {
@@ -13,7 +14,7 @@ class OpenGraph
          * parsing starts here:.
          */
         $doc = new DOMDocument();
-        @$doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
+        $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
 
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
@@ -60,7 +61,7 @@ class OpenGraph
 
         curl_setopt_array($curl, [
             CURLOPT_URL            => $url,
-            CURLOPT_FAILONERROR    => false,
+            CURLOPT_FAILONERROR    => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_SSL_VERIFYHOST => false,
@@ -74,6 +75,11 @@ class OpenGraph
         ]);
 
         $response = curl_exec($curl);
+        if (curl_errno($curl)!==0){
+            $message = curl_error($curl);
+            throw new FetchException ($message,curl_errno($curl), null, curl_getinfo($curl));
+        }
+
         curl_close($curl);
 
         return $response;
