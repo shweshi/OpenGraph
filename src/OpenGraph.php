@@ -75,9 +75,9 @@ class OpenGraph
         ]);
 
         $response = curl_exec($curl);
-        if (curl_errno($curl)!==0){
+        if (curl_errno($curl) !== 0) {
             $message = curl_error($curl);
-            throw new FetchException ($message,curl_errno($curl), null, curl_getinfo($curl));
+            throw new FetchException ($message, curl_errno($curl), null, curl_getinfo($curl));
         }
 
         curl_close($curl);
