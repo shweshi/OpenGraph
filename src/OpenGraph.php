@@ -4,6 +4,7 @@ namespace shweshi\OpenGraph;
 
 use DOMDocument;
 use shweshi\OpenGraph\Exceptions\FetchException;
+use Illuminate\Support\Facades\Log;
 
 class OpenGraph
 {
@@ -19,6 +20,7 @@ class OpenGraph
             $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
         } catch (\Exception $exception) {
             //catch possible errors due to empty or malformed HTML
+            Log::warning($exception->getMessage());
         }
 
         $tags = $doc->getElementsByTagName('meta');
