@@ -2,6 +2,10 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.0.9 - 2020-07-03
+
+- Handling the curl_exec() error.
+
 ## 1.0.8 - 2020-06-03
 
 - Fix error when verifying image url
