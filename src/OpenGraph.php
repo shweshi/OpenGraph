@@ -14,7 +14,7 @@ class OpenGraph
          * parsing starts here:.
          */
         $doc = new DOMDocument();
-        
+
         try {
             $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
         } catch (\Exception $exception) {
