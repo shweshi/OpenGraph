@@ -15,9 +15,9 @@ class OpenGraph
          */
         $doc = new DOMDocument();
         try {
-            $doc->loadHTML('<?xml encoding="utf-8" ?>' . $html);
+            $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
         } catch (\Exception $exception) {
-
+            //catch possible errors due to empty or malformed HTML
         }
 
         $tags = $doc->getElementsByTagName('meta');
