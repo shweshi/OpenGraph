@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.0.10 - 2020-07-03
+- Added exception handling and warning if the url contains error
+
 ## 1.0.9 - 2020-07-03
 
 - Handling the curl_exec() error.
