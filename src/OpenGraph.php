@@ -17,13 +17,13 @@ class OpenGraph
         $doc = new DOMDocument();
 
         $libxml_previous_state = libxml_use_internal_errors(true);
-        $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);        
+        $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
         //catch possible errors due to empty or malformed HTML
         Log::warning(libxml_get_errors());
         libxml_clear_errors();
         // restore previous state
         libxml_use_internal_errors($libxml_previous_state);
-        
+
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
         foreach ($tags as $tag) {
