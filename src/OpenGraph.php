@@ -3,7 +3,6 @@
 namespace shweshi\OpenGraph;
 
 use DOMDocument;
-use Illuminate\Support\Facades\Log;
 use shweshi\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
@@ -19,7 +18,6 @@ class OpenGraph
         $libxml_previous_state = libxml_use_internal_errors(true);
         $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
         //catch possible errors due to empty or malformed HTML
-        Log::warning(libxml_get_errors());
         libxml_clear_errors();
         // restore previous state
         libxml_use_internal_errors($libxml_previous_state);
