@@ -2,8 +2,11 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.0.12 - 2020-07-06
+- Remove illuminate Log
+
 ## 1.0.11 - 2020-07-06
-- Performance changes
+- Replace try/catch
 
 ## 1.0.10 - 2020-07-03
 - Added exception handling and warning if the url contains error
