@@ -3,7 +3,6 @@
 namespace shweshi\OpenGraph;
 
 use DOMDocument;
-use Illuminate\Support\Facades\Log;
 use shweshi\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
