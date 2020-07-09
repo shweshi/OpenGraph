@@ -162,6 +162,10 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   $language = 'en' // en-US,en;q=0.8,en-GB;q=0.6,es;q=0.4
   $data = OpenGraph::fetch($url, $allMeta, $language);
   ```
+  You can also pass additional Libxml parameters as the fourth argument ($options)  https://www.php.net/manual/en/libxml.constants.php. Default options are set to suppress the reporting of errors and warnings 
+  ```
+  $data = OpenGraph::fetch($url, $allMeta, $language, $options);  
+  ```
   
 ### Exception Handling
 
