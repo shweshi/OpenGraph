@@ -19,7 +19,7 @@ class OpenGraph
         $doc->loadHTML('<?xml encoding="utf-8" ?>'.$html, $options);
         //catch possible errors due to empty or malformed HTML
         if ($options > 0 && ($options & (LIBXML_NOWARNING | LIBXML_NOERROR)) == 0) {
-          Log::warning(libxml_get_errors());
+            Log::warning(libxml_get_errors());
         }
         libxml_clear_errors();
         // restore previous state
