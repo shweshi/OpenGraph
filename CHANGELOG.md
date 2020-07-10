@@ -2,6 +2,12 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.0.14 - 2020-07-10
+- New param on the OpenGraph::fetch method to allow users to enable/disable the logging of the malformed HTML parsing.
+
+## 1.0.13 - 2020-07-06
+- Use exception
+
 ## 1.0.12 - 2020-07-06
 - Remove illuminate Log
 
