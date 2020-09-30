@@ -7,7 +7,7 @@ use shweshi\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
 {
-    public function fetch($url, $allMeta = null, $lang = null, $options = LIBXML_NOWARNING | LIBXML_NOERROR, $userAgent = 'Curl')
+    public function fetch($url, $allMeta = null, $lang = null, $userAgent = 'Curl', $options = LIBXML_NOWARNING | LIBXML_NOERROR)
     {
         $html = $this->curl_get_contents($url, $lang, $userAgent);
         /**
