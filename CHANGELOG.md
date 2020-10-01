@@ -2,7 +2,7 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
-## 1.0.15 - 2020-10-01
+## 1.0.16 - 2020-10-01
 - Process the html tags for 4XX and 5XX pages.
 
 ## 1.0.15 - 2020-10-01
