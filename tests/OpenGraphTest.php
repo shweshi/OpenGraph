@@ -49,6 +49,17 @@ class OpenGraphTest extends TestCase
     }
 
     /** @test */
+    public function testFetchReturnsEmptyArrayForWebsiteWithNoMetadataAndReturnedNotFound()
+    {
+        $opengraph = new OpenGraph();
+        $data = $opengraph->fetch(
+            'https://www.example.com/not-found'
+        );
+
+        $this->assertEmpty($data);
+    }
+
+    /** @test */
     public function testFetchMustacheMetasData()
     {
         $opengraph = new OpenGraph();
