@@ -7,9 +7,9 @@ use shweshi\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
 {
-    public function fetch($url, $allMeta = null, $lang = null, $options = LIBXML_NOWARNING | LIBXML_NOERROR)
+    public function fetch($url, $allMeta = null, $lang = null, $options = LIBXML_NOWARNING | LIBXML_NOERROR, $userAgent = 'Curl')
     {
-        $html = $this->curl_get_contents($url, $lang);
+        $html = $this->curl_get_contents($url, $lang, $userAgent);
         /**
          * parsing starts here:.
          */
@@ -54,12 +54,12 @@ class OpenGraph
         return $metadata;
     }
 
-    protected function curl_get_contents($url, $lang)
+    protected function curl_get_contents($url, $lang, $userAgent)
     {
         $headers = [
             'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Cache-Control: no-cache',
-            'User-Agent: Curl',
+            'User-Agent: '.$userAgent,
         ];
 
         if ($lang) {

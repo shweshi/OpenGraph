@@ -166,6 +166,10 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   ```
   $data = OpenGraph::fetch($url, $allMeta, $language, $options);  
   ```
+  You can use the fifth parameter to set the user-agent ($userAgent) of the request. The default is 'Curl'.
+  ```
+  $data = OpenGraph::fetch($url, $allMeta, $language, $options, $userAgent);  
+  ```
   
 ### Exception Handling
 
