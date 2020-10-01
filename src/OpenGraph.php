@@ -70,7 +70,7 @@ class OpenGraph
 
         curl_setopt_array($curl, [
             CURLOPT_URL            => $url,
-            CURLOPT_FAILONERROR    => true,
+            CURLOPT_FAILONERROR    => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_SSL_VERIFYHOST => false,
