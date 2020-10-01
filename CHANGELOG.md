@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.0.15 - 2020-10-01
+- Support to add custom user agent.
+
 ## 1.0.14 - 2020-07-10
 - New param on the OpenGraph::fetch method to allow users to enable/disable the logging of the malformed HTML parsing.
 
