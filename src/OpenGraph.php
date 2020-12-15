@@ -31,11 +31,11 @@ class OpenGraph
             $metaproperty = ($tag->hasAttribute('property')) ? $tag->getAttribute('property') : $tag->getAttribute('name');
             if (!$allMeta && $metaproperty && strpos($tag->getAttribute('property'), 'og:') === 0) {
                 $key = strtr(substr($metaproperty, 3), '-', '_');
-                $value = $tag->getAttribute('content');
+                $value = $this->get_meta_value($tag);
             }
             if ($allMeta && $metaproperty) {
                 $key = (strpos($metaproperty, 'og:') === 0) ? strtr(substr($metaproperty, 3), '-', '_') : $metaproperty;
-                $value = $tag->getAttribute('content');
+                $value = $this->get_meta_value($tag);
             }
             if (!empty($key)) {
                 $metadata[$key] = $value;
@@ -109,5 +109,18 @@ class OpenGraph
         } catch (\Exception $e) {
             return false;
         }
+    }
+
+    protected function get_meta_value($tag)
+    {
+        if (!empty($tag->getAttribute('content'))) {
+            $value = $tag->getAttribute('content');
+        } elseif (!empty($tag->getAttribute('value'))) {
+            $value = $tag->getAttribute('value');
+        } else {
+            $value = '';
+        }
+
+        return $value;
     }
 }
