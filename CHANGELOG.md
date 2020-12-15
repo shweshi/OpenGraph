@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.1.0 - 2020-12-16
+- Add support to fetch meta values.
+
 ## 1.0.16 - 2020-10-01
 - Process the html tags for 4XX and 5XX pages.
 
