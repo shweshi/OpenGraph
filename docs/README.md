@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://docs.shashi.dev/OpenGraph/">OpenGraph</a> is a laravel package to fetch Open Graph metadata of a website/link.</strong>
+  <strong>A Laravel package to fetch Open Graph metadata of a website.</strong>
 </p>
 
 <p align="center">
@@ -57,9 +57,6 @@
 ## How to use Laravel OpenGraph
 
 An article can be found on the medium blog: https://hackernoon.com/how-to-fetch-open-graph-metadata-in-laravel-2d5d674904d7
-
-### Documentation
-https://docs.shashi.dev/OpenGraph/
 
 ### Installation
 
