@@ -59,7 +59,7 @@
 An article can be found on the medium blog: https://hackernoon.com/how-to-fetch-open-graph-metadata-in-laravel-2d5d674904d7
 
 ### Documentation
-https://docs.shashi.dev/OpenGraph/
+https://opengraph.shashi.dev
 
 ### Installation
 
