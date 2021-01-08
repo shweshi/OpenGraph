@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://docs.shashi.dev/OpenGraph/">OpenGraph</a> is a laravel package to fetch Open Graph metadata of a website/link.</strong>
+  <strong><a href="https://opengraph.shashi.dev/">OpenGraph</a> is a laravel package to fetch Open Graph metadata of a website/link.</strong>
 </p>
 
 <p align="center">
