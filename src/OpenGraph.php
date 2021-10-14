@@ -28,7 +28,7 @@ class OpenGraph
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
         
-        if ($allMeta) {
+        if ($allMeta && !empty($doc->getElementsByTagName('title'))) {
             $title = $doc->getElementsByTagName('title');
             $metadata['title'] = $title->length > 0 ? $title->item(0)->textContent : null ;
         }
