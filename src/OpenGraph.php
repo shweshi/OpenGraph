@@ -27,6 +27,12 @@ class OpenGraph
 
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
+        
+        if ($allMeta) {
+            $title = $doc->getElementsByTagName('title');
+            $metadata['title'] = $title->length > 0 ? $title->item(0)->textContent : null ;
+        }
+        
         foreach ($tags as $tag) {
             $metaproperty = ($tag->hasAttribute('property')) ? $tag->getAttribute('property') : $tag->getAttribute('name');
             if (!$allMeta && $metaproperty && strpos($tag->getAttribute('property'), 'og:') === 0) {
