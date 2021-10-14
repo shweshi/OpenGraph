@@ -30,7 +30,7 @@ class OpenGraph
         
         if ($allMeta && !empty($doc->getElementsByTagName('title'))) {
             $title = $doc->getElementsByTagName('title');
-            $metadata['title'] = $title->length > 0 ? $title->item(0)->textContent : null ;
+            $metadata['title'] = $title->length > 0 ? $title->item(0)->textContent : null;
         }
         
         foreach ($tags as $tag) {
