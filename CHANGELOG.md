@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.1.1 - 2022-02-18
+- Add support for Laravel 9
+
 ## 1.1.0 - 2020-12-16
 - Add support to fetch meta values.
 
