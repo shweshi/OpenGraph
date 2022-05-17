@@ -173,7 +173,13 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
   ```
   $data = OpenGraph::fetch($url, $allMeta, $language, $options, $userAgent);  
   ```
-  
+ 
+### NOTE:
+Anyone having problems getting metadata from social media sites please use the following user agent set on this example:
+```
+$opg_array = OpenGraph::fetch('URL', true, null, null, 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)');  
+```
+
 ### Exception Handling
 
 The fetch() method, returns a FetchException with aditional data at failure.
