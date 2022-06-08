@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.1.2 - 2022-06-09
+- Fix: SSL get headers image verification
+
 ## 1.1.1 - 2022-02-18
 - Add support for Laravel 9
 
