@@ -104,11 +104,11 @@ class OpenGraph
 
         try {
             $context_headers = stream_context_create([
-		'ssl' => [
-			'verify_peer' => false,
-			'verify_peer_name' => false,
-		]
-	    ]);
+                'ssl' => [
+                    'verify_peer'      => false,
+                    'verify_peer_name' => false,
+                ],
+            ]);
             $headers = get_headers($url, true, $context_headers);
 
             return stripos($headers[0], '200 OK') ? true : false;
