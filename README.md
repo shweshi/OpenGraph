@@ -211,4 +211,7 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshweshi%2FOpenGraph?ref=badge_large)
 
+### Support
+<a href="https://www.buymeacoffee.com/shashi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ### Happy coding!
