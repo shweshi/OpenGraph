@@ -75,7 +75,7 @@ class OpenGraph
         ];
 
         if ($lang) {
-            $headers[] = 'Accept-Language: ' . $lang;
+            $headers[] = 'Accept-Language: '.$lang;
         }
 
         $curl = curl_init();
@@ -120,17 +120,18 @@ class OpenGraph
                 'verify_peer_name' => false,
             ]];
 
-            if($this->userAgent !== self::DEFAULT_USER_AGENT) {
+            if ($this->userAgent !== self::DEFAULT_USER_AGENT) {
                 $contextHeaders['http'] = [
-                  'user_agent' => $this->userAgent,
+                    'user_agent' => $this->userAgent
                 ];
             }
 
             $streamContext = stream_context_create($contextHeaders);
             $headers = get_headers($url, true, $streamContext);
 
-            return (bool)stripos($headers[0], '200 OK');
+            return (bool) stripos($headers[0], '200 OK');
         } catch (\Exception $e) {
+            Log::error($e->getMessage());
             return false;
         }
     }
@@ -151,6 +152,7 @@ class OpenGraph
     public function userAgent(string $userAgent): self
     {
         $this->userAgent = $userAgent;
+
         return $this;
     }
 }

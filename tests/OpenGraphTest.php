@@ -89,7 +89,8 @@ class OpenGraphTest extends TestCase
     }
 
     #[Test]
-    public function testGetHeadersReturns403() {
+    public function testGetHeadersReturns403()
+    {
 
         $urlToFetch = 'https://www.icreatemagazine.nl/nieuws/airtag-hond-of-kat/';
         $graph = new OpenGraph();
