@@ -85,7 +85,7 @@ class OpenGraph
             CURLOPT_FAILONERROR    => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYHOST => true,
+            CURLOPT_SSL_VERIFYHOST => 2,
             CURLOPT_SSL_VERIFYPEER => true,
             CURLOPT_ENCODING       => 'UTF-8',
             CURLOPT_MAXREDIRS      => 10,
