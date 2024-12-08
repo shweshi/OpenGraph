@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.1.5 - 2024-12-08
+- Fixed issue retrieving images. In some circumstances doing a head check without proper user agent returns 403.
+
 ## 1.1.4 - 2024-04-26
 - Add support for Laravel 11
 
