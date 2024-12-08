@@ -91,7 +91,6 @@ class OpenGraphTest extends TestCase
     #[Test]
     public function testGetHeadersReturns403()
     {
-
         $urlToFetch = 'https://www.icreatemagazine.nl/nieuws/airtag-hond-of-kat/';
         $graph = new OpenGraph();
         $meta = $graph->fetch($urlToFetch, true);
@@ -101,5 +100,4 @@ class OpenGraphTest extends TestCase
         $meta = $graph->userAgent('Mozilla/5.0')->fetch($urlToFetch, true);
         self::assertnotEmpty($meta['image']);
     }
-
 }

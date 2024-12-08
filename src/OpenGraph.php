@@ -122,7 +122,7 @@ class OpenGraph
 
             if ($this->userAgent !== self::DEFAULT_USER_AGENT) {
                 $contextHeaders['http'] = [
-                    'user_agent' => $this->userAgent
+                    'user_agent' => $this->userAgent,
                 ];
             }
 
