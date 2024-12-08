@@ -8,7 +8,6 @@ use shweshi\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
 {
-
     private const string DEFAULT_USER_AGENT = 'Curl';
 
     private string $userAgent = self::DEFAULT_USER_AGENT;
@@ -132,6 +131,7 @@ class OpenGraph
             return (bool) stripos($headers[0], '200 OK');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
+
             return false;
         }
     }
