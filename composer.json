@@ -9,10 +9,14 @@
     }
   ],
   "require": {
-    "illuminate/log": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0"
+    "illuminate/log": "^10.0|^11.0",
+    "php": "^8.3",
+    "ext-dom": "*",
+    "ext-libxml": "*",
+    "ext-curl": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "4.8.*"
+    "phpunit/phpunit": "11.*"
   },
   "license": "MIT",
   "autoload": {

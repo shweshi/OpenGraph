@@ -2,12 +2,13 @@
 
 namespace shweshi\OpenGraph\Test;
 
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use shweshi\OpenGraph\OpenGraph;
 
 class OpenGraphTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function testFetch()
     {
         $opengraph = new OpenGraph();
@@ -21,7 +22,7 @@ class OpenGraphTest extends TestCase
         $this->assertArrayHasKey('image', $data);
     }
 
-    /** @test */
+    #[Test]
     public function testFetchAllMetadata()
     {
         $opengraph = new OpenGraph();
@@ -37,7 +38,7 @@ class OpenGraphTest extends TestCase
         $this->assertArrayHasKey('fb:app_id', $data);
     }
 
-    /** @test */
+    #[Test]
     public function testFetchReturnsEmptyArrayForWebsiteWithNoMetadata()
     {
         $opengraph = new OpenGraph();
@@ -48,7 +49,7 @@ class OpenGraphTest extends TestCase
         $this->assertEmpty($data);
     }
 
-    /** @test */
+    #[Test]
     public function testFetchReturnsEmptyArrayForWebsiteWithNoMetadataAndReturnedNotFound()
     {
         $opengraph = new OpenGraph();
@@ -59,7 +60,7 @@ class OpenGraphTest extends TestCase
         $this->assertEmpty($data);
     }
 
-    /** @test */
+    #[Test]
     public function testFetchMustacheMetasData()
     {
         $opengraph = new OpenGraph();
@@ -73,7 +74,7 @@ class OpenGraphTest extends TestCase
         $this->assertEmpty($data['image']);
     }
 
-    /** @test */
+    #[Test]
     public function testFetchNonAsciiImageUrlData()
     {
         $opengraph = new OpenGraph();
@@ -85,5 +86,18 @@ class OpenGraphTest extends TestCase
         $this->assertArrayHasKey('description', $data);
         $this->assertArrayHasKey('image', $data);
         $this->assertNotEmpty($data['image']);
+    }
+
+    #[Test]
+    public function testGetHeadersReturns403()
+    {
+        $urlToFetch = 'https://www.icreatemagazine.nl/nieuws/airtag-hond-of-kat/';
+        $graph = new OpenGraph();
+        $meta = $graph->fetch($urlToFetch, true);
+
+        self::assertEquals('', $meta['image']);
+
+        $meta = $graph->userAgent('Mozilla/5.0')->fetch($urlToFetch, true);
+        self::assertnotEmpty($meta['image']);
     }
 }

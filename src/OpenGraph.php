@@ -3,13 +3,21 @@
 namespace shweshi\OpenGraph;
 
 use DOMDocument;
+use Illuminate\Support\Facades\Log;
 use shweshi\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
 {
-    public function fetch($url, $allMeta = null, $lang = null, $options = LIBXML_NOWARNING | LIBXML_NOERROR, $userAgent = 'Curl')
+    private const string DEFAULT_USER_AGENT = 'Curl';
+
+    private string $userAgent = self::DEFAULT_USER_AGENT;
+
+    /**
+     * @throws FetchException
+     */
+    public function fetch($url, $allMeta = null, $lang = null, $options = LIBXML_NOWARNING | LIBXML_NOERROR): array
     {
-        $html = $this->curl_get_contents($url, $lang, $userAgent);
+        $html = $this->curl_get_contents($url, $lang, $this->userAgent);
         /**
          * parsing starts here:.
          */
@@ -28,13 +36,13 @@ class OpenGraph
         $tags = $doc->getElementsByTagName('meta');
         $metadata = [];
         foreach ($tags as $tag) {
-            $metaproperty = ($tag->hasAttribute('property')) ? $tag->getAttribute('property') : $tag->getAttribute('name');
-            if (!$allMeta && $metaproperty && strpos($tag->getAttribute('property'), 'og:') === 0) {
-                $key = strtr(substr($metaproperty, 3), '-', '_');
+            $metaProperty = ($tag->hasAttribute('property')) ? $tag->getAttribute('property') : $tag->getAttribute('name');
+            if (!$allMeta && $metaProperty && str_starts_with($tag->getAttribute('property'), 'og:')) {
+                $key = strtr(substr($metaProperty, 3), '-', '_');
                 $value = $this->get_meta_value($tag);
             }
-            if ($allMeta && $metaproperty) {
-                $key = (strpos($metaproperty, 'og:') === 0) ? strtr(substr($metaproperty, 3), '-', '_') : $metaproperty;
+            if ($allMeta && $metaProperty) {
+                $key = (str_starts_with($metaProperty, 'og:')) ? strtr(substr($metaProperty, 3), '-', '_') : $metaProperty;
                 $value = $this->get_meta_value($tag);
             }
             if (!empty($key)) {
@@ -54,7 +62,10 @@ class OpenGraph
         return $metadata;
     }
 
-    protected function curl_get_contents($url, $lang, $userAgent)
+    /**
+     * @throws FetchException
+     */
+    protected function curl_get_contents($url, $lang, $userAgent): bool|string
     {
         $headers = [
             'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -63,7 +74,7 @@ class OpenGraph
         ];
 
         if ($lang) {
-            array_push($headers, 'Accept-Language: '.$lang);
+            $headers[] = 'Accept-Language: '.$lang;
         }
 
         $curl = curl_init();
@@ -73,8 +84,8 @@ class OpenGraph
             CURLOPT_FAILONERROR    => false,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => 2,
+            CURLOPT_SSL_VERIFYPEER => true,
             CURLOPT_ENCODING       => 'UTF-8',
             CURLOPT_MAXREDIRS      => 10,
             CURLOPT_TIMEOUT        => 30,
@@ -103,16 +114,24 @@ class OpenGraph
         }
 
         try {
-            $context_headers = stream_context_create([
-                'ssl' => [
-                    'verify_peer'      => false,
-                    'verify_peer_name' => false,
-                ],
-            ]);
-            $headers = get_headers($url, true, $context_headers);
+            $contextHeaders = ['ssl' => [
+                'verify_peer'      => false,
+                'verify_peer_name' => false,
+            ]];
 
-            return stripos($headers[0], '200 OK') ? true : false;
+            if ($this->userAgent !== self::DEFAULT_USER_AGENT) {
+                $contextHeaders['http'] = [
+                    'user_agent' => $this->userAgent,
+                ];
+            }
+
+            $streamContext = stream_context_create($contextHeaders);
+            $headers = get_headers($url, true, $streamContext);
+
+            return (bool) stripos($headers[0], '200 OK');
         } catch (\Exception $e) {
+            Log::error($e->getMessage());
+
             return false;
         }
     }
@@ -128,5 +147,12 @@ class OpenGraph
         }
 
         return $value;
+    }
+
+    public function userAgent(string $userAgent): self
+    {
+        $this->userAgent = $userAgent;
+
+        return $this;
     }
 }
