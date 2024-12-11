@@ -111,7 +111,7 @@ class OpenGraph
             ]);
             $headers = get_headers($url, true, $context_headers);
 
-            return stripos($headers[0], '200') ? true : false;
+            return stripos($headers[0], '200') !== false;
         } catch (\Exception $e) {
             return false;
         }
