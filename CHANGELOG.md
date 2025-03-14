@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.1.5 - 2025-03-14
+- Add support for Laravel 12
+
 ## 1.1.4 - 2024-04-26
 - Add support for Laravel 11
 
