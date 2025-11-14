@@ -2,6 +2,9 @@
 
 All notable changes to `OpenGraph` will be documented in this file.
 
+## 1.2.0 - 2026-11-14
+- Fix a problem where the header only contains 200
+  
 ## 1.1.5 - 2025-03-14
 - Add support for Laravel 12
 
